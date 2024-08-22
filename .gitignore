@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs
+/classwork/chapter one/.vs/chapter one
+/classwork/chapter one/x64/Debug
+/classwork/chapter one/hello word/x64/Debug
