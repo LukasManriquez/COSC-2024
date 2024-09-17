@@ -78,7 +78,7 @@ int main()
         getline(cin, movie.Title);
 
     };
-
+    //
         ///// display movie detals
             ;cout << "---------------" << endl; //;
             cout << movie.Title << endl;
