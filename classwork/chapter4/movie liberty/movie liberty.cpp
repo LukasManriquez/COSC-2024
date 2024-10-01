@@ -21,6 +21,8 @@ struct Movie
     int ReleaseYear;
 
     bool IsClassic;
+
+    string Genre;
 };
 
 enum MenuCommand
@@ -248,6 +250,42 @@ int main()
             };
         };
     };
+    cin.ignore();
+
+    //getting genre(s) refrence
+    //int genreCount = 0;
+    //while (genreCount < 5)    // start at 0 , end at < N(number) 
+    //{
+    //    cout << "Enter optional genre " << (genreCount + 1) << ": ";
+
+    //    string genre;
+    //    getline(cin, movie.Genre);
+    //    if (genre != "")
+    //    {
+    //        movie.Genre += genre + ", ";
+    //    }
+    //    genreCount++;  //  prefix/postfix
+    //}
+
+     // for loop - designed to iterate a fixed number of times with a well known start and end
+    //int genreIndex = 0;
+    for (int Index = 0; Index < 5; ++Index)  // start at 0 , end at < 5(any number) 
+    {
+        cout << "Enter optional genre " << (Index + 1) << ": ";
+
+        string genre;
+        getline(cin, movie.Genre);
+        if (genre == "")
+        {
+            break; // exits the loop
+            continue; //loops only - stops the current iteration and loop again // not common when coding 
+
+            movie.Genre += genre + ", ";
+        }
+    };
+    // cout << genreIndex;  |  will not work
+
+    // - for (;;) {}; -  //infinite loop
     /*
 
     else
@@ -284,7 +322,8 @@ int main()
     //shortest  form using conditional operator => Eb ? Et : Ef
     // Et & Ef = must be the exat same type, type coercion is not allowed
     cout << "Is Classic? " << (movie.IsClassic ? "yes" : "No") << endl;
-
+    if (movie.Genre !="")
+    cout << "Genre(s) " << movie.Genre << endl;
     if (movie.Description != "")
         cout << movie.Description << endl;
     cout << "---------------" << endl;
