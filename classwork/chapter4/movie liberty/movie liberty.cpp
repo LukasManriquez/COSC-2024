@@ -278,7 +278,7 @@ int main()
         if (genre == "")
         {
             break; // exits the loop
-            continue; //loops only - stops the current iteration and loop again // not common when coding 
+            // continue; //loops only - stops the current iteration and loop again // not common when coding 
 
             movie.Genre += genre + ", ";
         }
