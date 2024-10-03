@@ -76,6 +76,28 @@ int main()
   // cout << left << " >= " << right << " = " << (left >= right) << endl;
   // cout << left << " != " << right << " = " << (left != right) << endl;
   // cout << endl;
+  // 
+    //nested loop demo not good make sure it is very fast if not use outside of loop
+    //int iterations = 0;
+    //for (int i = 0; i < 100; ++i)
+    //{
+
+    //    for (int j = 0; j < 100; ++j)
+    //    {
+    //        ++iterations;
+    //        cout << i << ", " << j << " = " << iterations << endl;
+
+    //        if (iterations % 100 == 0)
+    //        {
+    //            char choice;
+    //            cout << "Do you want to give up?";
+    //            cin >> choice;
+    //            if (choice == 'Y') || choice == 'y')
+    //            break;
+    //        };
+    //    };
+    //};
+    //cout << "Total iterations = " << iterations << endl;
 
     //show menu
     cout << "Movie Library" << endl;
@@ -91,7 +113,7 @@ int main()
     MenuCommand menuCommand = (MenuCommand)0;
     //bool done = false;
     //while (!done)
-    while (menuCommand == 0)
+    do 
     {
         char input;
         cin >> input;
@@ -114,7 +136,7 @@ int main()
 
             default: cout << "Bad input" << endl; break;
         };
-    };
+    } while (menuCommand == 0);
     cin.ignore();
 
         // int shouldntWork = MenuCommand::MC_Addmovie;
@@ -138,7 +160,8 @@ int main()
     //create a new movie
     Movie movie; // = {0};
   
-    while (movie.Title == "")
+    //while (movie.Title == "")
+    do
     {
         cout << "enter a title ";
         //cin >> movie.Title;
@@ -149,11 +172,11 @@ int main()
             // if-stmt ::= if (Eb) S ;
         if (movie.Title == "")
             cout << "ERROR: Title is required" << endl;
-    };
+    } while (movie.Title == "");
 
     // get run length, at leas 0, minutet
-    movie.RunLength = -1;
-    while (movie.RunLength < 0 || movie.RunLength > 1440) 
+              //movie.RunLength = -1;
+    do //while (movie.RunLength < 0 || movie.RunLength > 1440) 
     {
         cout << "Enter run length (in minutes): ";
         cin >> movie.RunLength;
@@ -180,7 +203,7 @@ int main()
 
         if (movie.RunLength < 0 || movie.RunLength > 1440)
             cout << "ERROR: Run length must be between 0 and 1440" << endl;
-    };
+    } while (movie.RunLength < 0 || movie.RunLength > 1440);
 
     // realwase year at least 1900
     while (movie.ReleaseYear < 1900 || movie.ReleaseYear > 2100)
