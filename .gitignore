@@ -197,3 +197,4 @@ _Pvt_Extensions
 # Paket dependency manager
 .paket/paket.exe
 paket-files/
+/labs/lab 2/lab 2/lab 2.cpp
