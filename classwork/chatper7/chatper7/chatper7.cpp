@@ -51,7 +51,64 @@ void TestPassByReference()
     Translate(rc, 5, 10);
     Display(rc);
 }
+
+void InitArrayDemo()
+{
+    const int MaxRates = 100;
+        double payrates[MaxRates] = {0}; //zero initalize
+
+        //for (int index = 0; index < MaxRates; ++index)
+        //    payRates[index] = 0
+}
+void GradeArrayDemo()
+{
+    const int MaxGrades = 20;
+    double dummyValue2 = -1;
+    int grades[MaxGrades];
+    double dummyValue = 0;
+
+    int estimatedMaxArraySize = //size of array / size of element
+        sizeof(grades) / sizeof(int);
+
+    int count = 0;
+    for (int index = 0; index < MaxGrades; ++index)// ++count)
+    {
+        std::cout << "Enter a grade: ";
+        std::cin >> grades[index];
+
+        if (grades[index] <= 0)
+            break;
+        ++count;
+    };
+    //for (int index = 0; index < MaxGrades; ++index) for entire array
+        for (int index = 0; index < count; ++index)
+
+    {
+        std::cout << grades[index] << std::endl;
+    }
+
+    int indexToChange;
+    do
+    {
+        
+        std::cout << "Enter the index of grades to change: ";
+        std::cin >> indexToChange;
+    } while (indexToChange < 0 || indexToChange >= MaxGrades);
+
+    int newGrade;
+    std::cout << "Enter the new grade: ";
+    std::cin >> newGrade;
+
+    grades[indexToChange] = newGrade;
+
+}
+
 int main()
+{
+    InitArrayDemo();
+}
+ 
+void NameArrayDemo() 
 {
     //array is a set of related data
     // all elemets must be the same type 
@@ -87,4 +144,3 @@ int main()
     }
      
 }
-
