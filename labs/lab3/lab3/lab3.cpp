@@ -60,8 +60,6 @@ void displayFallingDistanceTable(int time, bool inFeet)
 int main() 
 {
 
-    displayProgramInfo();
-
     int time = getFallingTime();
 
     bool inFeet = getUnits();
