@@ -45,21 +45,6 @@ bool getUnits()
     return (choice == 'f');
 }
 
-void displayFallingDistanceTable(int time, bool inFeet)
-{
-    cout << "Seconds      Distance" << endl;
-    cout << "=====================" << endl;
-
-    for (int i = 1; i <= time; i++) 
-    {
-        double distance = calculateFallingDistance(i);
-        if (inFeet) {
-            distance *= 3.28084;
-        }
-        cout << setw(2) << i << "             "
-            << fixed << setprecision(2) << distance << (inFeet ? " ft" : " m") << endl;
-    }
-}
 
 int main() 
 {
